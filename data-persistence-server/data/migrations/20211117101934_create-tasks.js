@@ -5,11 +5,12 @@ exports.up = async function(knex) {
     tbl.string('task-description').notNullable();
     tbl.string('task-notes');
     tbl.boolean('task-completed').defaultTo(false);
-    tbl.foreign('project-id').references('project-id').inTable('projects').onDelete('CASCADE').onUpdate('CASCADE');
+    tbl.integer('project-id').references('project-id').inTable('projects').notNullable().onDelete('CASCADE').onUpdate('CASCADE');
   })
 
 }
 
 exports.down = async function(knex) {
+    await knex.schema.dropTableIfExists('projects');
     await knex.schema.dropTableIfExists('tasks');
 };
