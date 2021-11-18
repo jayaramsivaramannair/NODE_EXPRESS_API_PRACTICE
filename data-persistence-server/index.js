@@ -3,7 +3,13 @@ const express = require('express');
 
 const server = express();
 
+const projectRoutes = require('./api/projects/projectRouter');
+
 const port = process.env.PORT || 8000;
+
+server.use(express.json());
+server.use('/api/projects', projectRoutes);
+
 
 
 server.get('/', (req, res) => {
