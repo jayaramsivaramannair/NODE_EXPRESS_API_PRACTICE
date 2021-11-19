@@ -12,7 +12,7 @@ router.get('/', async (req, res, next) => {
       res.status(404).json({message: 'No Projects found!'})
     }
   } catch (err) {
-    console.log(err.stack);
+    res.status(500).send(`${err.message} ${err.stack}`);
   }
   
   next();
@@ -28,7 +28,7 @@ router.get('/:id', async (req, res, next) => {
       res.status(404).json({message: 'Project with the specified ID does not exist!'})
     }
   } catch (err) {
-    console.log(err.stack);
+    res.status(500).send(`${err.message} ${err.stack}`);
   }
 
   next();
