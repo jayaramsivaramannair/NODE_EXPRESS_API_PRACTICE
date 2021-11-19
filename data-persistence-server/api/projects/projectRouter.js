@@ -6,12 +6,31 @@ const router = require('express').Router();
 router.get('/', async (req, res, next) => {
   try {
     const list = await projects.find();
-    res.status(200).json(list);
-
+    if(list) {
+      res.status(200).json(list);
+    } else {
+      res.status(404).json({message: 'No Projects found!'})
+    }
   } catch (err) {
     console.log(err.stack);
   }
   
+  next();
+})
+
+
+router.get('/:id', async (req, res, next) => {
+  try {
+    const project = await projects.findById(req.params.id);
+    if(project) {
+      res.status(200).json(project);
+    } else {
+      res.status(404).json({message: 'Project with the specified ID does not exist!'})
+    }
+  } catch (err) {
+    console.log(err.stack);
+  }
+
   next();
 })
 
