@@ -9,24 +9,25 @@ const router = require('express').Router();
  *   schemas:
   *    resources:
     *     type: object
-    *     required:
-    *       - resource-name
-    *     properties:
-    *       resource-id: 
-    *        type: integer
-    *        description: Auto-incrementing ID for each resource
-    *       resource-name:
-    *         type: string
-    *         description: Name of the resource
-    *       resource-description: 
-    *         type: string
-    *         description: Description of the resource
-    *     example:
-    *      resource-id: 1
-    *      resource-name: "The Ring"
-    *      resource-description: "One Ring to Rule Them All!"
-    *      
+      *     required:
+      *       - resource-name
+      *     properties:
+      *       resource-id: 
+      *        type: integer
+      *        description: Auto-incrementing ID for each resource
+      *       resource-name:
+      *         type: string
+      *         description: Name of the resource 
+      *       resource-description: 
+      *         type: string
+      *         description: Description of the resource
+      *     example:
+      *      resource-id: 1
+      *      resource-name: "One Ring"
+      *      project-description: "One Ring to Rule Them All"
+      *      
 */
+
 
 /**
  * @swagger

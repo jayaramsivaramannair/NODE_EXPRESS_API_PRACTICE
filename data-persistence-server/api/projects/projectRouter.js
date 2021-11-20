@@ -10,27 +10,27 @@ const router = require('express').Router();
  *   schemas:
   *    projects:
     *     type: object
-    *     required:
-    *       - project-name
-    *     properties:
-    *       project-id: 
-    *        type: integer
-    *        description: Auto-incrementing ID for each project
-    *       project-name:
-    *         type: string
-    *         description: Name of the project 
-    *       project-description: 
-    *         type: string
-    *         description: Description of the project
-    *       project-completed:
-    *          type: boolean
-    *          description: Whether the project is completed or not
-    *     example:
-    *      project-id: 1
-    *      project-name: "Bar"
-    *      project-description: "Bar is a great place to work"
-    *      project-completed: false
-    *      
+      *     required:
+      *       - project-name
+      *     properties:
+      *       project-id: 
+      *        type: integer
+      *        description: Auto-incrementing ID for each project
+      *       project-name:
+      *         type: string
+      *         description: Name of the project 
+      *       project-description: 
+      *         type: string
+      *         description: Description of the project
+      *       project-completed:
+      *          type: boolean
+      *          description: Whether the project is completed or not
+      *     example:
+      *      project-id: 1
+      *      project-name: "Bar"
+      *      project-description: "Bar is a great place to work"
+      *      project-completed: false
+      *      
 */
 
 /**
