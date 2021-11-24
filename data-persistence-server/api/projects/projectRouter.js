@@ -64,8 +64,12 @@ const router = require('express').Router();
 router.get('/', async (req, res, next) => {
   try {
     const list = await projects.find();
+    let modifiedProjects = [];
     if(list) {
-      res.status(200).json(list);
+      modifiedProjects = list.map(project => {
+        return {...project, 'project-completed': (project['project-completed']) ? true : false};
+      });
+      res.status(200).json(modifiedProjects);
     } else {
       res.status(404).json({message: 'No Projects found!'})
     }
