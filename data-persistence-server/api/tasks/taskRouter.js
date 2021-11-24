@@ -68,8 +68,13 @@ const router = require('express').Router();
 router.get('/', async (req, res, next) => {
   try {
     const list = await tasks.find();
+    let modifiedTasks = [];
     if(list) {
-      res.status(200).json(list);
+      modifiedTasks = list.map(task => {
+        return {...task, 'task-completed' : (task['task-completed']) ? true : false }
+      })
+      console.log(modifiedTasks)
+      res.status(200).json(modifiedTasks);
     } else {
       res.status(404).json({message: 'No Tasks found!'})
     }
