@@ -112,8 +112,10 @@ router.get('/', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
   try {
     const task = await tasks.findById(req.params.id);
+    let modifiedTask = {};
     if(task) {
-      res.status(200).json(task);
+      modifiedTask = {...task, 'task-completed': (task['task-completed'] ? true : false)}
+      res.status(200).json(modifiedTask);
     } else {
       res.status(404).json({message: 'Task with the specified ID does not exist!'})
     }

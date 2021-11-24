@@ -108,8 +108,10 @@ router.get('/', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
   try {
     const project = await projects.findById(req.params.id);
+    let modifiedProject = {}
     if(project) {
-      res.status(200).json(project);
+      modifiedProject = {...project, 'project-completed': (project['project-completed']) ? true : false};
+      res.status(200).json(modifiedProject);
     } else {
       res.status(404).json({message: 'Project with the specified ID does not exist!'})
     }
