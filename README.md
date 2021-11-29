@@ -15,7 +15,8 @@ The database for this server was set up using SQLite as a lightweight database a
 
 ## Project Set Up Instructions:
 
-- Clone the repository to your local machine
+- Clone the repository to your local machine or download the zip file and extract it to your local machine.
+- Repository can be cloned by navigating to the appropriate location on the terminal and typing `https://github.com/jayaramsivaramannair/fetch_rewards_api.git`
 - cd into the directory for any of the servers listed above
 - Run npm install to install the required dependencies
 
